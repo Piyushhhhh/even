@@ -86,10 +86,11 @@ Widget transactionItem(BuildContext context, int i) {
                             ),
                           ],
                         ),
-                        Icon(
-                          Icons.houseboat_outlined,
-                          color: AppColors.primary(),
-                        )
+                        Image.asset(
+                          "assets/aster_logo.png",
+                          height: 24,
+                          width: 64,
+                        ),
                       ],
                     ),
                     const SizedBox(
@@ -113,17 +114,29 @@ Widget transactionItem(BuildContext context, int i) {
                       height: 10,
                     ),
                     Row(
-                      children: const [
-                        Icon(
-                          Icons.photo,
-                          size: 35,
+                      children: [
+                        Container(
+                          height: 48,
+                          width: 48,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            image: const DecorationImage(
+                                image: AssetImage("assets/prescription.jpeg"),
+                                fit: BoxFit.cover),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
-                        Icon(
-                          Icons.photo,
-                          size: 35,
+                        Container(
+                          height: 48,
+                          width: 48,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            image: const DecorationImage(
+                                image: AssetImage("assets/prescription.jpeg"),
+                                fit: BoxFit.cover),
+                          ),
                         ),
                       ],
                     ),
