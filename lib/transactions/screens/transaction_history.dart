@@ -30,19 +30,35 @@ class _TransactionHistoryState extends State<TransactionHistory> {
       backgroundColor: AppColors.background(),
       bottomNavigationBar: customBottomNavigationBar(),
       body: SingleChildScrollView(
-        physics: const ClampingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              addCosultantButton(),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  addCosultantButton(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20, left: 20),
+                    child: Text(
+                      Strings.addCosultant,
+                      style: TextStyle(
+                          color: AppColors.accent(),
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
               transactionList(context),
               const SizedBox(
                 height: 30,
-              )
+              ),
             ],
           ),
         ),

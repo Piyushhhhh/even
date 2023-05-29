@@ -7,8 +7,9 @@ Widget transactionList(BuildContext context) {
     itemCount: 7,
     physics: const NeverScrollableScrollPhysics(),
     scrollDirection: Axis.vertical,
+    // padding: const EdgeInsets.all(0),
     itemBuilder: (newContext, i) {
-      return transactionItem(context);
+      return transactionItem(context, i);
     },
   );
 }
