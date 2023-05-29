@@ -1,3 +1,4 @@
+import 'package:even/dashboard/screen/dashboard.dart';
 import 'package:flutter/material.dart';
 
 import 'shared/bottom_navigation_bar/bottom_navigation_bar.dart';
@@ -19,8 +20,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _pages = [
+      const DashboardPage(),
       const TransactionHistory(),
-      Container(),
       Container(),
       Container(),
     ];

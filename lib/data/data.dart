@@ -11,3 +11,9 @@ final List<String> bottomNavigationIcons = [
   "assets/wellness.png",
   "assets/user.png",
 ];
+
+final List<String> hospitalsNearBy = [
+  "Aster Multispeciality hospital",
+  "Government hospital",
+  "Appolo 24x7 hospital",
+];
