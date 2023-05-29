@@ -1,5 +1,4 @@
 import 'package:even/transactions/widgets/add_consultant_button.dart';
-import 'package:even/transactions/widgets/bottom_naviagtion_bar.dart';
 import 'package:even/transactions/widgets/trasaction_list.dart';
 import 'package:even/value/colors.dart';
 import 'package:even/value/strings.dart';
@@ -28,7 +27,6 @@ class _TransactionHistoryState extends State<TransactionHistory> {
         elevation: 0,
       ),
       backgroundColor: AppColors.background(),
-      bottomNavigationBar: customBottomNavigationBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
