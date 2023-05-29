@@ -61,6 +61,34 @@ class _AddConsultantState extends State<AddConsultant>
         const SizedBox(height: 16),
         ...buildListItems(staggeredController, _itemSlideIntervals),
         const Spacer(),
+        AnimatedPositioned(
+          duration: const Duration(milliseconds: 350),
+          height: 48,
+          bottom: MediaQuery.of(context).padding.bottom + 16,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 48,
+            padding: const EdgeInsets.symmetric(horizontal: 32),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(48))),
+                backgroundColor: AppColors.accent(),
+              ),
+              onPressed: () {},
+              child: Text(
+                "Continue",
+                style: TextStyle(
+                  fontSize: 18,
+                  color: AppColors.fadeText(),
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 20,
+        )
       ],
     );
   }
