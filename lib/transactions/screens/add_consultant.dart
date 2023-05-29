@@ -1,15 +1,17 @@
 import 'package:even/data/data.dart';
+import 'package:even/transactions/widgets/add_consulation_list.dart';
 import 'package:even/value/colors.dart';
+import 'package:even/value/strings.dart';
 import 'package:flutter/material.dart';
 
-class TransactionHistory extends StatefulWidget {
-  const TransactionHistory({super.key});
+class AddConsultant extends StatefulWidget {
+  const AddConsultant({super.key});
 
   @override
-  State<TransactionHistory> createState() => _TransactionHistoryState();
+  State<AddConsultant> createState() => _AddConsultantState();
 }
 
-class _TransactionHistoryState extends State<TransactionHistory>
+class _AddConsultantState extends State<AddConsultant>
     with TickerProviderStateMixin {
   late AnimationController slideController;
   late AnimationController staggeredController;
@@ -48,45 +50,8 @@ class _TransactionHistoryState extends State<TransactionHistory>
   @override
   void dispose() {
     slideController.dispose();
+    staggeredController.dispose();
     super.dispose();
-  }
-
-  List<Widget> buildListItems() {
-    final listItems = <Widget>[];
-    for (var i = 0; i < menuTitles.length; ++i) {
-      listItems.add(
-        AnimatedBuilder(
-          animation: staggeredController,
-          builder: (context, child) {
-            final animationPercent = Curves.easeOut.transform(
-              _itemSlideIntervals[i].transform(staggeredController.value),
-            );
-            final opacity = animationPercent;
-            final slideDistance = (1.0 - animationPercent) * 150;
-
-            return Opacity(
-              opacity: opacity,
-              child: Transform.translate(
-                offset: Offset(slideDistance, 0),
-                child: child,
-              ),
-            );
-          },
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16),
-            child: Text(
-              menuTitles[i],
-              textAlign: TextAlign.left,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ),
-      );
-    }
-    return listItems;
   }
 
   Widget buildContent() {
@@ -94,7 +59,7 @@ class _TransactionHistoryState extends State<TransactionHistory>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 16),
-        ...buildListItems(),
+        ...buildListItems(staggeredController, _itemSlideIntervals),
         const Spacer(),
       ],
     );
@@ -107,7 +72,7 @@ class _TransactionHistoryState extends State<TransactionHistory>
       appBar: AppBar(
         elevation: 0,
         title: Text(
-          'Choose Type of Service',
+          Strings.chooseAtypeOfService,
           style: TextStyle(color: AppColors.fadeText()),
         ),
         leading: GestureDetector(
