@@ -68,7 +68,7 @@ class _AddConsultantState extends State<AddConsultant>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.accent().withOpacity(0.3),
+      backgroundColor: AppColors.background(),
       appBar: AppBar(
         elevation: 0,
         title: Text(
@@ -76,12 +76,12 @@ class _AddConsultantState extends State<AddConsultant>
           style: TextStyle(color: AppColors.fadeText()),
         ),
         leading: GestureDetector(
-          child: const Icon(Icons.close),
+          child: Icon(Icons.close, color: AppColors.fadeText()),
           onTap: () {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: AppColors.accent().withOpacity(0.3),
+        backgroundColor: AppColors.background(),
       ),
       body: Stack(
         fit: StackFit.expand,

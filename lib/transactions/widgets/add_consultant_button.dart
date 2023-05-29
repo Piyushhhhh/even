@@ -7,13 +7,17 @@ Widget addCosultantButton() {
   return Column(
     children: [
       OpenContainer(
+        middleColor: AppColors.accent(),
+        transitionType: ContainerTransitionType.fadeThrough,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         closedShape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(79.0))),
+            borderRadius: BorderRadius.all(
+          Radius.circular(79.0),
+        )),
         closedElevation: 0,
         closedColor: AppColors.background(),
         openColor: AppColors.accent(),
-        transitionDuration: const Duration(milliseconds: 600),
+        transitionDuration: const Duration(milliseconds: 900),
         openBuilder: (BuildContext context,
             void Function({Object? returnValue}) action) {
           return const AddConsultant();
