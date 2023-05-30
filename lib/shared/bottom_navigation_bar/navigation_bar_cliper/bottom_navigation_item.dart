@@ -2,13 +2,13 @@ import 'package:even/shared/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:even/shared/bottom_navigation_bar/navigation_bar_cliper/unselected_item_bottom_navigation_clipper.dart';
 import 'package:flutter/material.dart';
 
-class AppBottomNavigationItem extends StatefulWidget {
+class NavigationItem extends StatefulWidget {
   final Function() onTap;
   final bool isSelected;
   final String icon;
   final CustomClipper<Path> clipper;
 
-  const AppBottomNavigationItem({
+  const NavigationItem({
     Key? key,
     required this.onTap,
     required this.isSelected,
@@ -17,11 +17,10 @@ class AppBottomNavigationItem extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<AppBottomNavigationItem> createState() =>
-      _AppBottomNavigationItemState();
+  State<NavigationItem> createState() => _NavigationItemState();
 }
 
-class _AppBottomNavigationItemState extends State<AppBottomNavigationItem> {
+class _NavigationItemState extends State<NavigationItem> {
   @override
   void initState() {
     super.initState();

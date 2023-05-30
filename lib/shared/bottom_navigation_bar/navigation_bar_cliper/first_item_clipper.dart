@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class InitialItemCustomShape extends CustomClipper<Path> {
+class FirstItemShape extends CustomClipper<Path> {
   @override
   getClip(Size size) {
     double width = size.width;

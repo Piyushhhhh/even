@@ -1,10 +1,10 @@
 import 'package:even/value/colors.dart';
 import 'package:flutter/material.dart';
 
-class HostpitalListItemHorizontal extends StatelessWidget {
+class HostpitalListItem extends StatelessWidget {
   final String hospitalName;
 
-  const HostpitalListItemHorizontal({Key? key, required this.hospitalName})
+  const HostpitalListItem({Key? key, required this.hospitalName})
       : super(key: key);
 
   @override
@@ -55,12 +55,12 @@ class HostpitalListItemHorizontal extends StatelessWidget {
                           color: const Color(0xffFBE277),
                           borderRadius: BorderRadius.circular(4)),
                       child: const Text("1.9 km"),
-                    )
+                    ),
                   ],
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

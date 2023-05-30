@@ -10,7 +10,7 @@ class HostpitalListHorizontal extends StatelessWidget {
     return ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return HostpitalListItemHorizontal(
+          return HostpitalListItem(
             hospitalName: hospitalsNearBy[index],
           );
         },

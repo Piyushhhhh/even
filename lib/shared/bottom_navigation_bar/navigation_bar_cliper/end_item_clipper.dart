@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class EndItemCustomShape extends CustomClipper<Path> {
+class EndCustomShape extends CustomClipper<Path> {
   @override
   getClip(Size size) {
     var path = Path();

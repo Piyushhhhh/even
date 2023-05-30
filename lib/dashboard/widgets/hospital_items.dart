@@ -12,9 +12,10 @@ class ConciergeItem extends StatelessWidget {
           height: 32,
           width: 32,
           decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                  image: AssetImage("assets/face.png"), fit: BoxFit.cover)),
+            shape: BoxShape.circle,
+            image: DecorationImage(
+                image: AssetImage("assets/face.png"), fit: BoxFit.cover),
+          ),
         ),
         const SizedBox(
           width: 16,

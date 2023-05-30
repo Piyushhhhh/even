@@ -1,7 +1,7 @@
 import 'package:even/data/data.dart';
 import 'package:even/shared/bottom_navigation_bar/navigation_bar_cliper/bottom_navigation_item.dart';
-import 'package:even/shared/bottom_navigation_bar/navigation_bar_cliper/end_item_bottom_navigation_clipper.dart';
-import 'package:even/shared/bottom_navigation_bar/navigation_bar_cliper/inital_item_bottom_navigation_clipper.dart';
+import 'package:even/shared/bottom_navigation_bar/navigation_bar_cliper/end_item_clipper.dart';
+import 'package:even/shared/bottom_navigation_bar/navigation_bar_cliper/first_item_clipper.dart';
 import 'package:even/shared/bottom_navigation_bar/navigation_bar_cliper/middle_item_bottom_navigation_clipper.dart';
 import 'package:flutter/material.dart';
 
@@ -33,22 +33,22 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
 
               switch (index) {
                 case 0:
-                  clipper = InitialItemCustomShape();
+                  clipper = FirstItemShape();
                   break;
 
                 case 1:
                 case 2:
-                  clipper = MiddleItemCustomShape();
+                  clipper = MiddleItemShape();
                   break;
 
                 case 3:
-                  clipper = EndItemCustomShape();
+                  clipper = EndCustomShape();
                   break;
                 default:
-                  clipper = MiddleItemCustomShape();
+                  clipper = MiddleItemShape();
               }
 
-              Widget selectedChild = AppBottomNavigationItem(
+              Widget selectedChild = NavigationItem(
                 onTap: () {
                   widget.onChange(index);
                 },
